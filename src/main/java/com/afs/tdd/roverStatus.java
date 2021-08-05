@@ -2,8 +2,8 @@ package com.afs.tdd;
 
 public class roverStatus {
 
-    private int xCoordinate, yCoordinate;
-    private String direction;
+    private final int xCoordinate, yCoordinate;
+    private final String direction;
 
     public roverStatus(int xCoordinate, int yCoordinate, String direction) {
         this.xCoordinate = xCoordinate;
@@ -23,17 +23,6 @@ public class roverStatus {
     }
     public String returnCurrentCoordinate(){
         return String.format("%d %d %s",this.getXCoordinate(),this.getYCoordinate(),this.getDirection());
-    }
-
-    //set methods
-    public void setXCoordinate(int xCoordinate){
-        this.xCoordinate = xCoordinate;
-    }
-    public void setYCoordinate(int yCoordinate){
-        this.yCoordinate = yCoordinate;
-    }
-    public void setDirection(String direction){
-        this.direction = direction;
     }
 
 

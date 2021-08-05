@@ -2,16 +2,23 @@ package com.afs.tdd;
 
 public class marsRover {
 
-    private int xCoordinate, yCoordinate;
-    private String direction, command;
     private roverStatus currentRover;
 
     public marsRover(roverStatus rover){
         this.currentRover = rover;
     }
 
-    public static String executeCommand(String m) {
-        return "";
+    public void executeCommand(String command) {
+        if(command.equals("M")){
+            moveForward();
+        }
+    }
+
+    public void moveForward(){
+        final int xCoordinate = this.currentRover.getXCoordinate();
+        final int yCoordinate = this.currentRover.getYCoordinate();
+        final String direction = this.currentRover.getDirection();
+        currentRover = new roverStatus(xCoordinate,yCoordinate+1,direction);
     }
 
     public int getXCoordinate(){
@@ -23,15 +30,14 @@ public class marsRover {
     }
 
     public String getDirection(){
-        return this.direction;
-    }
-
-    public String getCommand(){
-        return this.command;
+        return this.currentRover.getDirection();
     }
 
     public String getRoverStatus(){
         return this.getRoverStatus();
     }
+
+
+
 
 }

@@ -20,7 +20,7 @@ public class marsRoverTest {
         roverStatus expectedStatus = new roverStatus(0,1,"N");
 
         //when
-        marsRover.executeCommand("M");
+        Curiosity.executeCommand("M");
 
         //then
         assertEquals(expectedStatus.getYCoordinate(), Curiosity.getYCoordinate());
