@@ -8,6 +8,10 @@ public class marsRover {
         this.currentRover = rover;
     }
 
+    public void executeCommands(String command) {
+
+    }
+
     public void executeCommand(String command) {
         switch (command){
             case "M" :
