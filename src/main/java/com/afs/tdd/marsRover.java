@@ -56,6 +56,7 @@ public class marsRover {
                 newDirection = "N";
                 break;
             default:
+
         }
         return newDirection;
     }
