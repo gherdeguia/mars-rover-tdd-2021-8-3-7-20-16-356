@@ -19,6 +19,9 @@ public class marsRover {
             case "L" :
                 turnLeft();
                 break;
+            case "R" :
+                turnRight();
+                break;
             default:
         }
 
@@ -40,6 +43,14 @@ public class marsRover {
         currentRover = new roverStatus(xCoordinate,yCoordinate,newDirection);
     }
 
+    public void turnRight(){
+        final int xCoordinate = this.currentRover.getXCoordinate();
+        final int yCoordinate = this.currentRover.getYCoordinate();
+        final String direction = this.currentRover.getDirection();
+        String newDirection = turningRight(direction);
+        currentRover = new roverStatus(xCoordinate,yCoordinate,newDirection);
+    }
+
     public String turningLeft(String currentDirection){
         String newDirection = currentDirection;
         switch (currentDirection){
@@ -56,7 +67,26 @@ public class marsRover {
                 newDirection = "N";
                 break;
             default:
+        }
+        return newDirection;
+    }
 
+    public String turningRight(String currentDirection){
+        String newDirection = currentDirection;
+        switch (currentDirection){
+            case "N" :
+                newDirection = "E";
+                break;
+            case "E" :
+                newDirection = "S";
+                break;
+            case "S" :
+                newDirection = "W";
+                break;
+            case "W" :
+                newDirection = "N";
+                break;
+            default:
         }
         return newDirection;
     }
