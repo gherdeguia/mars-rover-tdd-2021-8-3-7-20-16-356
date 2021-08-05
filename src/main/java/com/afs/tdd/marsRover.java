@@ -21,8 +21,6 @@ public class marsRover {
                 break;
             default:
         }
-
-
     }
 
     public void moveForward(){
