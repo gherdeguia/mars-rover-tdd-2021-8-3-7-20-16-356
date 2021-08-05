@@ -194,11 +194,11 @@ public class marsRoverTest {
     @Test
     void should_rover_move_to_location_when_execute_commands_given_full_command_string() {
         //given
-        marsRover Curiosity = new marsRover(new roverStatus(0,0,"W"));
-        roverStatus expectedStatus = new roverStatus(0,0,"N");
+        marsRover Curiosity = new marsRover(new roverStatus(0,0,"N"));
+        roverStatus expectedStatus = new roverStatus(1,2,"S");
 
         //when
-        Curiosity.executeCommands("R");
+        Curiosity.executeCommands("0 0 N  MMRMR");
 
         //then
         assertEquals(expectedStatus.getYCoordinate(), Curiosity.getYCoordinate());

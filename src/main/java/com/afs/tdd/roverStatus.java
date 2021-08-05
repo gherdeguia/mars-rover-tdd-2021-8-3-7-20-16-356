@@ -22,8 +22,7 @@ public class roverStatus {
         return this.direction;
     }
     public String returnCurrentCoordinate(){
-        return String.format("%d %d %s",this.getXCoordinate(),this.getYCoordinate(),this.getDirection());
+        return String.format("Current Coordinates: %d %d %s",this.getXCoordinate(),this.getYCoordinate(),this.getDirection());
     }
-
 
 }
