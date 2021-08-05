@@ -55,4 +55,19 @@ public class marsRoverTest {
         assertEquals(expectedStatus.getXCoordinate(), Curiosity.getXCoordinate());
         assertEquals(expectedStatus.getDirection(), Curiosity.getDirection());
     }
+
+    @Test
+    void should_locationX_0_locationY_Neg1_direction_S_when_execute_command_given_locationX_0_locationY_0_direction_S_and_M() {
+        //given
+        marsRover Curiosity = new marsRover(new roverStatus(0,0,"S"));
+        roverStatus expectedStatus = new roverStatus(0,-1,"S");
+
+        //when
+        Curiosity.executeCommand("M");
+
+        //then
+        assertEquals(expectedStatus.getYCoordinate(), Curiosity.getYCoordinate());
+        assertEquals(expectedStatus.getXCoordinate(), Curiosity.getXCoordinate());
+        assertEquals(expectedStatus.getDirection(), Curiosity.getDirection());
+    }
 }
