@@ -1,16 +1,7 @@
 package com.afs.tdd;
 
 import org.junit.jupiter.api.Test;
-
 import static org.junit.jupiter.api.Assertions.assertEquals;
-
-
-/*
-    Test Cases
-    0 1 N  M
-    0 0 W  L
-    0 0 E  R
-*/
 
 public class marsRoverTest {
     @Test
@@ -23,7 +14,7 @@ public class marsRoverTest {
         Curiosity.executeCommand("M");
 
         //then
-        assertEquals(expectedStatus.getYCoordinate(), Curiosity.getYCoordinate());
+        assertEquals(expectedStatus.returnCurrentCoordinate(),Curiosity.returnCurrentCoordinate());
     }
 
     @Test
@@ -36,9 +27,7 @@ public class marsRoverTest {
         Curiosity.executeCommand("L");
 
         //then
-        assertEquals(expectedStatus.getYCoordinate(), Curiosity.getYCoordinate());
-        assertEquals(expectedStatus.getXCoordinate(), Curiosity.getXCoordinate());
-        assertEquals(expectedStatus.getDirection(), Curiosity.getDirection());
+        assertEquals(expectedStatus.returnCurrentCoordinate(),Curiosity.returnCurrentCoordinate());
     }
 
     @Test
@@ -51,9 +40,7 @@ public class marsRoverTest {
         Curiosity.executeCommand("R");
 
         //then
-        assertEquals(expectedStatus.getYCoordinate(), Curiosity.getYCoordinate());
-        assertEquals(expectedStatus.getXCoordinate(), Curiosity.getXCoordinate());
-        assertEquals(expectedStatus.getDirection(), Curiosity.getDirection());
+        assertEquals(expectedStatus.returnCurrentCoordinate(),Curiosity.returnCurrentCoordinate());
     }
 
     @Test
@@ -66,9 +53,7 @@ public class marsRoverTest {
         Curiosity.executeCommand("M");
 
         //then
-        assertEquals(expectedStatus.getYCoordinate(), Curiosity.getYCoordinate());
-        assertEquals(expectedStatus.getXCoordinate(), Curiosity.getXCoordinate());
-        assertEquals(expectedStatus.getDirection(), Curiosity.getDirection());
+        assertEquals(expectedStatus.returnCurrentCoordinate(),Curiosity.returnCurrentCoordinate());
     }
 
     @Test
@@ -81,9 +66,7 @@ public class marsRoverTest {
         Curiosity.executeCommand("L");
 
         //then
-        assertEquals(expectedStatus.getYCoordinate(), Curiosity.getYCoordinate());
-        assertEquals(expectedStatus.getXCoordinate(), Curiosity.getXCoordinate());
-        assertEquals(expectedStatus.getDirection(), Curiosity.getDirection());
+        assertEquals(expectedStatus.returnCurrentCoordinate(),Curiosity.returnCurrentCoordinate());
     }
 
     @Test
@@ -96,9 +79,7 @@ public class marsRoverTest {
         Curiosity.executeCommand("R");
 
         //then
-        assertEquals(expectedStatus.getYCoordinate(), Curiosity.getYCoordinate());
-        assertEquals(expectedStatus.getXCoordinate(), Curiosity.getXCoordinate());
-        assertEquals(expectedStatus.getDirection(), Curiosity.getDirection());
+        assertEquals(expectedStatus.returnCurrentCoordinate(),Curiosity.returnCurrentCoordinate());
     }
 
     @Test
@@ -111,9 +92,7 @@ public class marsRoverTest {
         Curiosity.executeCommand("M");
 
         //then
-        assertEquals(expectedStatus.getYCoordinate(), Curiosity.getYCoordinate());
-        assertEquals(expectedStatus.getXCoordinate(), Curiosity.getXCoordinate());
-        assertEquals(expectedStatus.getDirection(), Curiosity.getDirection());
+        assertEquals(expectedStatus.returnCurrentCoordinate(),Curiosity.returnCurrentCoordinate());
     }
 
     @Test
@@ -126,9 +105,7 @@ public class marsRoverTest {
         Curiosity.executeCommand("L");
 
         //then
-        assertEquals(expectedStatus.getYCoordinate(), Curiosity.getYCoordinate());
-        assertEquals(expectedStatus.getXCoordinate(), Curiosity.getXCoordinate());
-        assertEquals(expectedStatus.getDirection(), Curiosity.getDirection());
+        assertEquals(expectedStatus.returnCurrentCoordinate(),Curiosity.returnCurrentCoordinate());
     }
 
     @Test
@@ -141,9 +118,7 @@ public class marsRoverTest {
         Curiosity.executeCommand("R");
 
         //then
-        assertEquals(expectedStatus.getYCoordinate(), Curiosity.getYCoordinate());
-        assertEquals(expectedStatus.getXCoordinate(), Curiosity.getXCoordinate());
-        assertEquals(expectedStatus.getDirection(), Curiosity.getDirection());
+        assertEquals(expectedStatus.returnCurrentCoordinate(),Curiosity.returnCurrentCoordinate());
     }
 
     @Test
@@ -156,9 +131,7 @@ public class marsRoverTest {
         Curiosity.executeCommand("M");
 
         //then
-        assertEquals(expectedStatus.getYCoordinate(), Curiosity.getYCoordinate());
-        assertEquals(expectedStatus.getXCoordinate(), Curiosity.getXCoordinate());
-        assertEquals(expectedStatus.getDirection(), Curiosity.getDirection());
+        assertEquals(expectedStatus.returnCurrentCoordinate(),Curiosity.returnCurrentCoordinate());
     }
 
     @Test
@@ -171,9 +144,7 @@ public class marsRoverTest {
         Curiosity.executeCommand("L");
 
         //then
-        assertEquals(expectedStatus.getYCoordinate(), Curiosity.getYCoordinate());
-        assertEquals(expectedStatus.getXCoordinate(), Curiosity.getXCoordinate());
-        assertEquals(expectedStatus.getDirection(), Curiosity.getDirection());
+        assertEquals(expectedStatus.returnCurrentCoordinate(),Curiosity.returnCurrentCoordinate());
     }
 
     @Test
@@ -186,9 +157,7 @@ public class marsRoverTest {
         Curiosity.executeCommand("R");
 
         //then
-        assertEquals(expectedStatus.getYCoordinate(), Curiosity.getYCoordinate());
-        assertEquals(expectedStatus.getXCoordinate(), Curiosity.getXCoordinate());
-        assertEquals(expectedStatus.getDirection(), Curiosity.getDirection());
+        assertEquals(expectedStatus.returnCurrentCoordinate(),Curiosity.returnCurrentCoordinate());
     }
 
     @Test
@@ -201,8 +170,6 @@ public class marsRoverTest {
         Curiosity.executeCommands("0 0 N  MMRMR");
 
         //then
-        assertEquals(expectedStatus.getYCoordinate(), Curiosity.getYCoordinate());
-        assertEquals(expectedStatus.getXCoordinate(), Curiosity.getXCoordinate());
-        assertEquals(expectedStatus.getDirection(), Curiosity.getDirection());
+        assertEquals(expectedStatus.returnCurrentCoordinate(),Curiosity.returnCurrentCoordinate());
     }
 }

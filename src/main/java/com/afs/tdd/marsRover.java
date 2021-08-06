@@ -1,37 +1,36 @@
 package com.afs.tdd;
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
-
-import static java.lang.Integer.valueOf;
-
 public class marsRover {
 
     private roverStatus currentRover;
     private String commandString;
 
+    private final String NORTH = "N";
+    private final String EAST = "E";
+    private final String WEST = "W";
+    private final String SOUTH = "S";
+
     public marsRover(roverStatus rover) {
         this.currentRover = rover;
     }
 
-    public void executeCommands(String command) {
-        parseCommand(command);
-        int commandLength = this.commandString.length();
-
-        for (int x = 0; x < commandLength; x++) {
-            executeCommand(commandString.charAt(x) + "");
-        }
-    }
-
     public void parseCommand(String command) {
-        String[] parsedCommands = command.split("  ");
+        String[] parsedCommands = command.split(" {2}");
         String[] parsedCoordinates = parsedCommands[0].split(" ");
         int xCoordinate = Integer.parseInt(parsedCoordinates[0]);
         int yCoordinate = Integer.parseInt(parsedCoordinates[1]);
         String direction = parsedCoordinates[2];
         this.currentRover = new roverStatus(xCoordinate, yCoordinate, direction);
         this.commandString = parsedCommands[1];
+    }
+
+    public void executeCommands(String command) {
+        parseCommand(command);
+
+        String[] commandList = commandString.split("");
+        for (String singleCommand: commandList) {
+            executeCommand((singleCommand));
+        }
     }
 
     public void executeCommand(String command) {
@@ -47,7 +46,6 @@ public class marsRover {
                 break;
             default:
         }
-
         getRoverStatus();
     }
 
@@ -94,16 +92,16 @@ public class marsRover {
         String newDirection = currentDirection;
         switch (currentDirection) {
             case "N":
-                newDirection = "W";
+                newDirection = WEST;
                 break;
             case "W":
-                newDirection = "S";
+                newDirection = SOUTH;
                 break;
             case "S":
-                newDirection = "E";
+                newDirection = EAST;
                 break;
             case "E":
-                newDirection = "N";
+                newDirection = NORTH;
                 break;
             default:
         }
@@ -114,37 +112,27 @@ public class marsRover {
         String newDirection = currentDirection;
         switch (currentDirection) {
             case "N":
-                newDirection = "E";
+                newDirection = EAST;
                 break;
             case "E":
-                newDirection = "S";
+                newDirection = SOUTH;
                 break;
             case "S":
-                newDirection = "W";
+                newDirection = WEST;
                 break;
             case "W":
-                newDirection = "N";
+                newDirection = NORTH;
                 break;
             default:
         }
         return newDirection;
     }
 
-    public int getXCoordinate() {
-        return this.currentRover.getXCoordinate();
-    }
-
-    public int getYCoordinate() {
-        return this.currentRover.getYCoordinate();
-    }
-
-    public String getDirection() {
-        return this.currentRover.getDirection();
-    }
-
     public void getRoverStatus() {
         System.out.println(this.currentRover.returnCurrentCoordinate());
     }
 
-
+    public String returnCurrentCoordinate(){
+        return this.currentRover.returnCurrentCoordinate();
+    }
 }

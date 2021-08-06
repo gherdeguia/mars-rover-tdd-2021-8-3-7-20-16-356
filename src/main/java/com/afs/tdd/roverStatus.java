@@ -12,17 +12,20 @@ public class roverStatus {
     }
 
     //get methods
-    public int getXCoordinate(){
+    public int getXCoordinate() {
         return this.xCoordinate;
     }
-    public int getYCoordinate(){
+
+    public int getYCoordinate() {
         return this.yCoordinate;
     }
-    public String getDirection(){
+
+    public String getDirection() {
         return this.direction;
     }
-    public String returnCurrentCoordinate(){
-        return String.format("Current Coordinates: %d %d %s",this.getXCoordinate(),this.getYCoordinate(),this.getDirection());
+
+    public String returnCurrentCoordinate() {
+        return String.format("Current Coordinates: %d %d %s", this.getXCoordinate(), this.getYCoordinate(), this.getDirection());
     }
 
 }
