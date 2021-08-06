@@ -27,10 +27,15 @@ public class marsRover {
     public void executeCommands(String command) {
         parseCommand(command);
 
-        String[] commandList = commandString.split("");
-        for (String singleCommand: commandList) {
-            executeCommand((singleCommand));
+        if(commandString != ""){
+            String[] commandList = commandString.split("");
+            for (String singleCommand: commandList) {
+                executeCommand((singleCommand));
+            }
+        }else{
+            executeCommand(command);
         }
+
     }
 
     public void executeCommand(String command) {
